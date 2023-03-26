@@ -8,14 +8,14 @@ test("length + append", () => {
   const len2 = list.length();
   expect(len1).toBe(0);
   expect(len2).toBe(2);
-  expect(list.get(1)).toBe("b");
+  expect(list.get(1).value).toBe("b");
 });
 
 test("get", () => {
   const list = new LinkedList();
   list.append("a");
   list.append("b");
-  expect(list.get(1)).toBe("b");
+  expect(list.get(1).value).toBe("b");
 });
 
 test("insert", () => {
@@ -23,7 +23,7 @@ test("insert", () => {
   list.append("a");
   list.append("c");
   list.insert("b", 1);
-  expect(list.get(1)).toBe("b");
+  expect(list.get(1).value).toBe("b");
 });
 
 test("delete", () => {
@@ -32,7 +32,7 @@ test("delete", () => {
   list.append("b");
   list.append("c");
   const deleted = list.delete(1);
-  expect(deleted).toBe("b");
+  expect(deleted.value).toBe("b");
   expect(list.length()).toBe(2);
 });
 
@@ -62,8 +62,8 @@ test("reverse", () => {
   list.append("b");
   list.append("c");
   list.reverse();
-  expect(list.get(0)).toBe("c");
-  expect(list.get(list.length() - 1)).toBe("a");
+  expect(list.get(0).value).toBe("c");
+  expect(list.get(list.length() - 1).value).toBe("a");
 });
 
 test("findFirst", () => {
@@ -91,7 +91,7 @@ test("expand", () => {
 
   list2.append("d");
   list2.append("e");
-  list1.extend(list2.nodes);
+  list1.extend(list2);
 
   expect(list1.length()).toBe(5);
 });
