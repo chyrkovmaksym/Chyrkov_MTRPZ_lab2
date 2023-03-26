@@ -1,7 +1,7 @@
-const { List } = require("./list");
+const { LinkedList } = require("./list");
 
 test("length + append", () => {
-  const list = new List();
+  const list = new LinkedList();
   const len1 = list.length();
   list.append("a");
   list.append("b");
@@ -12,14 +12,14 @@ test("length + append", () => {
 });
 
 test("get", () => {
-  const list = new List();
+  const list = new LinkedList();
   list.append("a");
   list.append("b");
   expect(list.get(1)).toBe("b");
 });
 
 test("insert", () => {
-  const list = new List();
+  const list = new LinkedList();
   list.append("a");
   list.append("c");
   list.insert("b", 1);
@@ -27,7 +27,7 @@ test("insert", () => {
 });
 
 test("delete", () => {
-  const list = new List();
+  const list = new LinkedList();
   list.append("a");
   list.append("b");
   list.append("c");
@@ -37,7 +37,7 @@ test("delete", () => {
 });
 
 test("deleteAll", () => {
-  const list = new List();
+  const list = new LinkedList();
   list.append("a");
   list.append("a");
   list.append("c");
@@ -46,7 +46,7 @@ test("deleteAll", () => {
 });
 
 test("clone", () => {
-  const list1 = new List();
+  const list1 = new LinkedList();
   list1.append("a");
   list1.append("b");
   list1.append("c");
@@ -57,7 +57,7 @@ test("clone", () => {
 });
 
 test("reverse", () => {
-  const list = new List();
+  const list = new LinkedList();
   list.append("a");
   list.append("b");
   list.append("c");
@@ -67,7 +67,7 @@ test("reverse", () => {
 });
 
 test("findFirst", () => {
-  const list = new List();
+  const list = new LinkedList();
   list.append("a");
   list.append("b");
   list.append("b");
@@ -75,7 +75,7 @@ test("findFirst", () => {
 });
 
 test("findLast", () => {
-  const list = new List();
+  const list = new LinkedList();
   list.append("a");
   list.append("a");
   list.append("b");
@@ -83,8 +83,8 @@ test("findLast", () => {
 });
 
 test("expand", () => {
-  const list1 = new List();
-  const list2 = new List();
+  const list1 = new LinkedList();
+  const list2 = new LinkedList();
   list1.append("a");
   list1.append("b");
   list1.append("c");
@@ -97,7 +97,7 @@ test("expand", () => {
 });
 
 test("clear", () => {
-  const list = new List();
+  const list = new LinkedList();
   list.append("a");
   list.clear();
   expect(list.length()).toBe(0);
