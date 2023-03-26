@@ -1,4 +1,4 @@
-import List from "./list.js";
+const { List } = require("./list");
 
 const list = new List();
 

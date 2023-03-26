@@ -1,4 +1,4 @@
-export default class List {
+class List {
   constructor(elements) {
     this.nodes = elements?.length ? [...elements] : [];
   }
@@ -60,3 +60,7 @@ export default class List {
     }
   }
 }
+
+module.exports = {
+  List,
+};
