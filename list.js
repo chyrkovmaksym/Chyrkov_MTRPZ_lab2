@@ -1,6 +1,6 @@
 export default class List {
-  constructor() {
-    this.nodes = [];
+  constructor(elements) {
+    this.nodes = elements?.length ? [...elements] : [];
   }
 
   length() {
@@ -11,15 +11,9 @@ export default class List {
     this.nodes.push(element);
   }
 
-  checkIndex(index) {
-    if (index < 0 || index >= this.nodes.length) {
-      throw new Error("Invalid index");
-    }
-  }
-
   insert(element, index) {
     this.checkIndex(index);
-    this.data.splice(index, 0, element);
+    this.nodes.splice(index, 0, element);
   }
 
   delete(index) {
@@ -37,7 +31,7 @@ export default class List {
   }
 
   clone() {
-    return [...this.nodes];
+    return new List(this.nodes);
   }
 
   reverse() {
@@ -58,5 +52,11 @@ export default class List {
 
   extend(elements) {
     this.nodes = [...this.nodes, ...elements];
+  }
+
+  checkIndex(index) {
+    if (index < 0 || index >= this.nodes.length) {
+      throw new Error("Invalid index");
+    }
   }
 }
